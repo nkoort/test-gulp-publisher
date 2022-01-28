@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.min.css">
+@@include('../../html/head.html', {
+"title": "PAGE 1",
+})
+
+<body>
+    @@include('../../html/header.html', {})
+    <div>
+        <div><a href="page1.html">PAGE № 1</a></div>
+        <div><a href="../../index.html">INDEX HTML</a></div>
+    </div>
+
+    <!-- @@include('html/contacts.html', {}) -->
+    @@include('../../html/footer.html', {})
     <script src="js/app.min.js"></script>
-    <script src="./files/js/chief-slider.min.js"></script>
-    <script src="https://raw.githubusercontent.com/itchief/ui-components/master/ChiefSlider/chief-slider.min.js">
+</body>
+
+</html>hiefSlider/chief-slider.min.js">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="./files/js/activeMenu.js"></script>
-
-    <script>
-        $(function () {
-            $nav = $('.fixed-div');
-            $nav.css('width', $nav.outerWidth());
-            $window = $(window);
-            $h = $nav.offset().top;
-            $window.scroll(function () {
-                if ($window.scrollTop() > $h) {
-                    $nav.addClass('fixed');
-                } else {
-                    $nav.removeClass('fixed');
-                }
-            });
-        });
-    </script>
+    <script src="./files/js/fixedMenu.js"></script>
+    
 
     <title>PAGE 1</title>
 </head>
@@ -36,22 +31,6 @@
     <header>
     <div class="wrapper-header">
         <div class="header">
-            <script>
-                $(function () {
-                    $nav = $('.fixed-div');
-                    $nav.css('width', $nav.outerWidth());
-                    $window = $(window);
-                    $h = $nav.offset().top;
-                    $window.scroll(function () {
-                        if ($window.scrollTop() > $h) {
-                            $nav.addClass('fixed');
-                        } else {
-                            $nav.removeClass('fixed');
-                        }
-                    });
-                });
-            </script>
-
             <div class="header__container">
                 <div class="header__logo">
                     <a href="../../index.html">LOGO</a>
@@ -80,16 +59,21 @@
                     </div>
                 </div>
                 <div class="header__basket">
-
-                    <div class="header__basket_name">Корзина</div>
-                    <div class="header__basket_number">4</div>
+                    <div class="header__basket-container">
+                        <div class="header__basket_name">Корзина</div>
+                        <div class="header__basket_number">4</div>
+                    </div>
                 </div>
 
                 <div class="header__top_image">
-                    <div class="header__top_image-title"></div>
+                    <div class="header__top_image-title">
+                        <div class="header__top_image-title-main">Доставка ВКУСНЕЙШИХ 
+                            БЛЮд за 60 минут</div>
+                        <div class="header__top_image-title-sub">Ещё не пробовал?</div>
+                    </div>
                     <div class="header__top_image-blank"></div>
                 </div>
-                <div class="header__menu menu ">
+                <div class="header__menu fixed-div">
                     <script>
                         document.addEventListener('DOMContentLoaded', function () {
                             new ChiefSlider('.slider', {
@@ -101,8 +85,8 @@
                     
                     <div class="slider ">
                         <div class="slider__container ">
-                            <div class="slider__wrapper fixed-box">
-                                <div class="slider__items fixed-div">
+                            <div class="slider__wrapper ">
+                                <div class="slider__items ">
                                     <div class="slider__item">
                                         <a href="#footer">Холодные закуск</a>
                                     </div>
